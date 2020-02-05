@@ -4,16 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="005 实验-Pcanywhere, Hexo">
-    <meta name="description" content="005 实验-Pcanywhere
-Contents
-Contents
-题目
-过程
-
-题目利用第三放服务（Pcanywhere）提升权限的方法
-过程
-在实验中访问http://172.16.12.2/index.php，成功连接到websh">
+    <meta name="keywords" content="msf/msf信息收集--发现和端口扫描, Hexo">
+    <meta name="description" content="msf信息收集–发现和端口扫描
+kali机：192.168.1.5centos6机：192.168.1.6
+主机发现开启postgresqlroot@kali:~# service postgresql start
+打开msfconsole">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +16,7 @@ Contents
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>005 实验-Pcanywhere | Hexo</title>
+    <title>msf/msf信息收集--发现和端口扫描 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +306,12 @@ Contents
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">005 实验-Pcanywhere</h1>
+                    <h1 class="description center-align post-title">msf/msf信息收集--发现和端口扫描</h1>
                 </div>
             </div>
         </div>
@@ -445,7 +440,7 @@ Contents
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-07
+                    2020-02-05
                 </div>
                 
 
@@ -462,20 +457,25 @@ Contents
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>005 实验-Pcanywhere</p>
-<h2 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h2><ul>
-<li><a href="">Contents</a></li>
-<li><a href="">题目</a></li>
-<li><a href="">过程</a></li>
-</ul>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>利用第三放服务（Pcanywhere）提升权限的方法<br><img src="/2020/01/07/005-shi-yan-pcanywhere/f71ff1bf4a88863bf2ae2b1b7e4be3fc.png" alt=""></p>
-<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><ol>
-<li>在实验中访问<a href="http://172.16.12.2/index.php，成功连接到webshell" target="_blank" rel="noopener">http://172.16.12.2/index.php，成功连接到webshell</a><br><img src="/2020/01/07/005-shi-yan-pcanywhere/9e0585aaae6b73fafe42d13548d3c58e.png" alt=""><br><img src="/2020/01/07/005-shi-yan-pcanywhere/eb1faf6b71fb6a15f8a035cc31f8fa4b.png" alt=""></li>
-<li>分析该服务器端口服务<br><img src="/2020/01/07/005-shi-yan-pcanywhere/e89f4fe707173434a518223cf5fa3f0f.png" alt=""><br>5631端口是开启的，是pcanywhere服务</li>
-<li>去找pcanywhere的密码存储的文件<br><img src="/2020/01/07/005-shi-yan-pcanywhere/2df63b4545ba7f06ed12170ebb12d714.png" alt=""><br>该文件一般是以.CIF为后缀名，本环境中的密码文件为：PCA.test.CIF<br>下载该文件</li>
-<li>获取账号密码<br><img src="/2020/01/07/005-shi-yan-pcanywhere/1f2d53e8a2598347cf39f27b81268637.png" alt=""></li>
-<li>用pcanywhere登录<br><img src="/2020/01/07/005-shi-yan-pcanywhere/085c38112cc00ff46e02e436f8fb1f6e.png" alt=""><br>打开这个刚创建的新主控端<br><img src="/2020/01/07/005-shi-yan-pcanywhere/ca987d1cda571894be1494a4176ed5dd.png" alt=""><br>输入账号密码<br><img src="/2020/01/07/005-shi-yan-pcanywhere/fe1ac9f4ba009b99582c9066ab37cbf6.png" alt=""><br>连接上了，屏幕是花的<br><img src="/2020/01/07/005-shi-yan-pcanywhere/a3aeb7419a97a84ee411610a712883ad.png" alt=""><br>反正成功了</li>
-</ol>
+                <p>msf信息收集–发现和端口扫描</p>
+<p>kali机：192.168.1.5<br>centos6机：192.168.1.6</p>
+<h2 id="主机发现"><a href="#主机发现" class="headerlink" title="主机发现"></a>主机发现</h2><p>开启postgresql<br><code>root@kali:~# service postgresql start</code></p>
+<p>打开msfconsole<br>使用db_nmap扫描c网段：<br><code>db_nmap -sV 192.168.1.0/24</code><br>最后会扫出来本网段的机子<br>使用hosts查看机子</p>
+<p><img src="/2020/02/05/msf/msf-xin-xi-shou-ji-fa-xian-he-duan-kou-sao-miao/_resources/c76aa817717f42bcb807082268b0e569.png" alt="41915a60cd2de31565c5949b413245bd.png"></p>
+<p>使用arp_sweep扫描发现<br><code>msf5 &gt; use auxiliary/scanner/discovery/arp_sweep</code></p>
+<p>设置扫描网段，设置线程数<br>网段也可以设置为一下格式<br><code>192.168.1.20-192.168.1.30</code></p>
+<p><code>msf5 auxiliary(scanner/discovery/arp_sweep) &gt; set rhosts 192.168.1.0/24
+rhosts =&gt; 192.168.1.0/24
+msf5 auxiliary(scanner/discovery/arp_sweep) &gt; set threads 20
+threads =&gt; 20</code></p>
+<p><img src="/2020/02/05/msf/msf-xin-xi-shou-ji-fa-xian-he-duan-kou-sao-miao/_resources/3aaaef98414e474abff3d2cf63206b96.png" alt="e910c694ce6c08f747a39fdd3f96bb95.png"></p>
+<p>使用hosts查看扫描出来的主机列表</p>
+<p><img src="/2020/02/05/msf/msf-xin-xi-shou-ji-fa-xian-he-duan-kou-sao-miao/_resources/586e5b21bbdb4f7d98b23b84c2e998a3.png" alt="1b557ef53dd142cae420b8fc7ec4d884.png"></p>
+<h2 id="端口扫描"><a href="#端口扫描" class="headerlink" title="端口扫描"></a>端口扫描</h2><p>使用portscan模块，里面有很多模块，选择一个进行测试<br><code>use auxiliary/scanner/portscan/syn</code></p>
+<p>设置目标主机，要扫描端口，线程数</p>
+<p><img src="/2020/02/05/msf/msf-xin-xi-shou-ji-fa-xian-he-duan-kou-sao-miao/_resources/48ac62deaecc4c0db92addc70916d032.png" alt="df85749042e07599e721c9ee667d6cc9.png"></p>
+<p><code>run</code></p>
+<p><img src="/2020/02/05/msf/msf-xin-xi-shou-ji-fa-xian-he-duan-kou-sao-miao/_resources/cb35aac6b0ae43709d90f38a291eb5db.png" alt="0f6fdb4ed3cbf42b5018482259f6be32.png"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -519,7 +519,7 @@ Contents
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://bigcity-smalllove.github.io/2020/01/07/005-shi-yan-pcanywhere/">https://bigcity-smalllove.github.io/2020/01/07/005-shi-yan-pcanywhere/</a>
+                    <a href="https://bigcity-smalllove.github.io/2020/02/05/msf/msf-xin-xi-shou-ji-fa-xian-he-duan-kou-sao-miao/">https://bigcity-smalllove.github.io/2020/02/05/msf/msf-xin-xi-shou-ji-fa-xian-he-duan-kou-sao-miao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -599,22 +599,23 @@ Contents
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/02/05/004-shi-yan-pr-ti-quan/msf-xin-xi-shou-ji-fa-xian-he-duan-kou-sao-miao/">
+                <a href="/2020/02/05/msf/msf-cong-qi-ta-gong-ju-zhong-zhua-qu-xin-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="004 实验 -PR提权/msf信息收集--发现和端口扫描">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="msf/msf从其他工具中抓取信息">
                         
-                        <span class="card-title">004 实验 -PR提权/msf信息收集--发现和端口扫描</span>
+                        <span class="card-title">msf/msf从其他工具中抓取信息</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            msf信息收集–发现和端口扫描
-kali机：192.168.1.5centos6机：192.168.1.6
-主机发现开启postgresqlroot@kali:~# service postgresql start
-打开msfconsole
+                            msf从其他工具中抓取信息
+从抓包文件中读取账号密码支持从pcap抓包文件中提取密码支持pop3\imap\ftp\http get协议
+use auxiliary/sniffer/psnuffle
+
+        document.qu
                         
                     </div>
                     <div class="publish-info">
@@ -639,36 +640,28 @@ kali机：192.168.1.5centos6机：192.168.1.6
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/07/004-shi-yan-pr-ti-quan/">
+                <a href="/2020/02/05/004-shi-yan-pr-ti-quan/msf-xin-xi-shou-ji-mssql-ftp/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="004 实验 -PR提权">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="004 实验 -PR提权/msf信息收集--mssql+ftp">
                         
-                        <span class="card-title">004 实验 -PR提权</span>
+                        <span class="card-title">004 实验 -PR提权/msf信息收集--mssql+ftp</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            004 实验 -PR提权
-Contents
-Contents
-实验
-过程
-
-实验
-过程
-首先通过菜刀连接上
-
-
-
-访问虚拟终端，查看一下权限发现拒绝访问，有可能是因为做了限制，是这里无法访问到cmd.exe所以我们手动上传一个cmd.exe
+                            msf信息收集–mssql+ftp
+mssql▪ Mssql扫描端口
+– TCP 1433 （动态端口）/ UDP 1434 （查询TCP端口号）
+– use auxiliary/scanner/mssql/mssql_ping 
+▪ 爆破
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-05
                             </span>
                         <span class="publish-author">
                             

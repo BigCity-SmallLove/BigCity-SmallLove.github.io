@@ -1,0 +1,19 @@
+<p>msf信息收集–mssql+ftp</p>
+<h2 id="mssql"><a href="#mssql" class="headerlink" title="mssql"></a>mssql</h2><pre><code>▪ Mssql扫描端口
+– TCP 1433 （动态端口）/ UDP 1434 （查询TCP端口号）
+– use auxiliary/scanner/mssql/mssql_ping 
+▪ 爆破mssql密码
+– use auxiliary/scanner/mssql/mssql_login
+▪ 远程执行代码
+– use auxiliary/admin/mssql/mssql_exec
+– set CMD net user user pass /ADD</code></pre><h2 id="ftp"><a href="#ftp" class="headerlink" title="ftp"></a>ftp</h2><pre><code>▪ FTP 版本扫描
+– use auxiliary/scanner/ftp/ftp_version
+– use auxiliary/scanner/ftp/anonymous
+– use auxiliary/scanner/ftp/ftp_login
+▪ use auxiliary/scanner/ [tab]
+– Display all 479 possibilities? (y or n)</code></pre><h3 id="mssql-1"><a href="#mssql-1" class="headerlink" title="mssql"></a>mssql</h3><p>▪ Mssql扫描端口<br>– TCP 1433 （动态端口）/ UDP 1434 （查询TCP端口号）<br>– use auxiliary/scanner/mssql/mssql_ping<br>▪ 爆破mssql密码<br>– use auxiliary/scanner/mssql/mssql_login<br>▪ 远程执行代码<br>– use auxiliary/admin/mssql/mssql_exec<br>– set CMD net user user pass /ADD</p>
+<h3 id="ftp-1"><a href="#ftp-1" class="headerlink" title="ftp"></a>ftp</h3><p>▪ FTP 版本扫描<br>– use auxiliary/scanner/ftp/ftp_version</p>
+<p><img src="../_resources/0cdc26d899664cdfa1ffda6f35e31ffc.png" alt="be4f5f36b0d3fa364dab551350e925cb.png"></p>
+<p>– use auxiliary/scanner/ftp/anonymous</p>
+<p><img src="../_resources/86d9f4a13a114931b761b9d986f585a3.png" alt="2df9f491f53dc000d3f2d73d331428c9.png"></p>
+<p>– use auxiliary/scanner/ftp/ftp_login<br>▪ use auxiliary/scanner/ [tab]<br>– Display all 479 possibilities? (y or n)</p>

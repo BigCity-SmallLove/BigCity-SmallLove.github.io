@@ -1,0 +1,19 @@
+<p>msf信息收集–发现和端口扫描</p>
+<p>kali机：192.168.1.5<br>centos6机：192.168.1.6</p>
+<h2 id="主机发现"><a href="#主机发现" class="headerlink" title="主机发现"></a>主机发现</h2><p>开启postgresql<br><code>root@kali:~# service postgresql start</code></p>
+<p>打开msfconsole<br>使用db_nmap扫描c网段：<br><code>db_nmap -sV 192.168.1.0/24</code><br>最后会扫出来本网段的机子<br>使用hosts查看机子</p>
+<p><img src="../_resources/c76aa817717f42bcb807082268b0e569.png" alt="41915a60cd2de31565c5949b413245bd.png"></p>
+<p>使用arp_sweep扫描发现<br><code>msf5 &gt; use auxiliary/scanner/discovery/arp_sweep</code></p>
+<p>设置扫描网段，设置线程数<br>网段也可以设置为一下格式<br><code>192.168.1.20-192.168.1.30</code></p>
+<p><code>msf5 auxiliary(scanner/discovery/arp_sweep) &gt; set rhosts 192.168.1.0/24
+rhosts =&gt; 192.168.1.0/24
+msf5 auxiliary(scanner/discovery/arp_sweep) &gt; set threads 20
+threads =&gt; 20</code></p>
+<p><img src="../_resources/3aaaef98414e474abff3d2cf63206b96.png" alt="e910c694ce6c08f747a39fdd3f96bb95.png"></p>
+<p>使用hosts查看扫描出来的主机列表</p>
+<p><img src="../_resources/586e5b21bbdb4f7d98b23b84c2e998a3.png" alt="1b557ef53dd142cae420b8fc7ec4d884.png"></p>
+<h2 id="端口扫描"><a href="#端口扫描" class="headerlink" title="端口扫描"></a>端口扫描</h2><p>使用portscan模块，里面有很多模块，选择一个进行测试<br><code>use auxiliary/scanner/portscan/syn</code></p>
+<p>设置目标主机，要扫描端口，线程数</p>
+<p><img src="../_resources/48ac62deaecc4c0db92addc70916d032.png" alt="df85749042e07599e721c9ee667d6cc9.png"></p>
+<p><code>run</code></p>
+<p><img src="../_resources/cb35aac6b0ae43709d90f38a291eb5db.png" alt="0f6fdb4ed3cbf42b5018482259f6be32.png"></p>

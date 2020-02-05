@@ -4,16 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="005 实验-Pcanywhere, Hexo">
-    <meta name="description" content="005 实验-Pcanywhere
-Contents
-Contents
-题目
-过程
+    <meta name="keywords" content="004 实验 -PR提权/msf信息收集--端口扫描2, Hexo">
+    <meta name="description" content="msf信息收集–端口扫描2
+idle扫描use auxiliary/scanner/ip/ipidseq查找出来以后，就可以进行idle主机扫描nmap -PN -sI 1.1.1.2 1.1.1.3
 
-题目利用第三放服务（Pcanywhere）提升权限的方法
-过程
-在实验中访问http://172.16.12.2/index.php，成功连接到websh">
+上面的结果是没有扫描出来idle主机">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +16,7 @@ Contents
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>005 实验-Pcanywhere | Hexo</title>
+    <title>004 实验 -PR提权/msf信息收集--端口扫描2 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +306,12 @@ Contents
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">005 实验-Pcanywhere</h1>
+                    <h1 class="description center-align post-title">004 实验 -PR提权/msf信息收集--端口扫描2</h1>
                 </div>
             </div>
         </div>
@@ -445,7 +440,7 @@ Contents
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-07
+                    2020-02-05
                 </div>
                 
 
@@ -462,21 +457,12 @@ Contents
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>005 实验-Pcanywhere</p>
-<h2 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h2><ul>
-<li><a href="">Contents</a></li>
-<li><a href="">题目</a></li>
-<li><a href="">过程</a></li>
-</ul>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>利用第三放服务（Pcanywhere）提升权限的方法<br><img src="/2020/01/07/005-shi-yan-pcanywhere/f71ff1bf4a88863bf2ae2b1b7e4be3fc.png" alt=""></p>
-<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><ol>
-<li>在实验中访问<a href="http://172.16.12.2/index.php，成功连接到webshell" target="_blank" rel="noopener">http://172.16.12.2/index.php，成功连接到webshell</a><br><img src="/2020/01/07/005-shi-yan-pcanywhere/9e0585aaae6b73fafe42d13548d3c58e.png" alt=""><br><img src="/2020/01/07/005-shi-yan-pcanywhere/eb1faf6b71fb6a15f8a035cc31f8fa4b.png" alt=""></li>
-<li>分析该服务器端口服务<br><img src="/2020/01/07/005-shi-yan-pcanywhere/e89f4fe707173434a518223cf5fa3f0f.png" alt=""><br>5631端口是开启的，是pcanywhere服务</li>
-<li>去找pcanywhere的密码存储的文件<br><img src="/2020/01/07/005-shi-yan-pcanywhere/2df63b4545ba7f06ed12170ebb12d714.png" alt=""><br>该文件一般是以.CIF为后缀名，本环境中的密码文件为：PCA.test.CIF<br>下载该文件</li>
-<li>获取账号密码<br><img src="/2020/01/07/005-shi-yan-pcanywhere/1f2d53e8a2598347cf39f27b81268637.png" alt=""></li>
-<li>用pcanywhere登录<br><img src="/2020/01/07/005-shi-yan-pcanywhere/085c38112cc00ff46e02e436f8fb1f6e.png" alt=""><br>打开这个刚创建的新主控端<br><img src="/2020/01/07/005-shi-yan-pcanywhere/ca987d1cda571894be1494a4176ed5dd.png" alt=""><br>输入账号密码<br><img src="/2020/01/07/005-shi-yan-pcanywhere/fe1ac9f4ba009b99582c9066ab37cbf6.png" alt=""><br>连接上了，屏幕是花的<br><img src="/2020/01/07/005-shi-yan-pcanywhere/a3aeb7419a97a84ee411610a712883ad.png" alt=""><br>反正成功了</li>
-</ol>
-<script>
+                <p>msf信息收集–端口扫描2</p>
+<h2 id="idle扫描"><a href="#idle扫描" class="headerlink" title="idle扫描"></a>idle扫描</h2><p>use auxiliary/scanner/ip/ipidseq<br>查找出来以后，就可以进行idle主机扫描<br>nmap -PN -sI 1.1.1.2 1.1.1.3</p>
+<p><img src="/2020/02/05/004-shi-yan-pr-ti-quan/msf-xin-xi-shou-ji-duan-kou-sao-miao-2/_resources/645fe527b1944a30b23a503bb31c3a8a.png" alt="Image.png"></p>
+<p>上面的结果是没有扫描出来idle主机</p>
+<h2 id="UDP扫描"><a href="#UDP扫描" class="headerlink" title="UDP扫描"></a>UDP扫描</h2><pre><code>use auxiliary/scanner/discovery/udp_sweep
+use auxiliary/scanner/discovery/udp_probe</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -519,7 +505,7 @@ Contents
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://bigcity-smalllove.github.io/2020/01/07/005-shi-yan-pcanywhere/">https://bigcity-smalllove.github.io/2020/01/07/005-shi-yan-pcanywhere/</a>
+                    <a href="https://bigcity-smalllove.github.io/2020/02/05/004-shi-yan-pr-ti-quan/msf-xin-xi-shou-ji-duan-kou-sao-miao-2/">https://bigcity-smalllove.github.io/2020/02/05/004-shi-yan-pr-ti-quan/msf-xin-xi-shou-ji-duan-kou-sao-miao-2/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -599,22 +585,23 @@ Contents
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/02/05/004-shi-yan-pr-ti-quan/msf-xin-xi-shou-ji-fa-xian-he-duan-kou-sao-miao/">
+                <a href="/2020/02/05/004-shi-yan-pr-ti-quan/msf-xin-xi-shou-ji-mssql-ftp/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="004 实验 -PR提权/msf信息收集--发现和端口扫描">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="004 实验 -PR提权/msf信息收集--mssql+ftp">
                         
-                        <span class="card-title">004 实验 -PR提权/msf信息收集--发现和端口扫描</span>
+                        <span class="card-title">004 实验 -PR提权/msf信息收集--mssql+ftp</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            msf信息收集–发现和端口扫描
-kali机：192.168.1.5centos6机：192.168.1.6
-主机发现开启postgresqlroot@kali:~# service postgresql start
-打开msfconsole
+                            msf信息收集–mssql+ftp
+mssql▪ Mssql扫描端口
+– TCP 1433 （动态端口）/ UDP 1434 （查询TCP端口号）
+– use auxiliary/scanner/mssql/mssql_ping 
+▪ 爆破
                         
                     </div>
                     <div class="publish-info">
@@ -639,36 +626,29 @@ kali机：192.168.1.5centos6机：192.168.1.6
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/07/004-shi-yan-pr-ti-quan/">
+                <a href="/2020/02/05/004-shi-yan-pr-ti-quan/msf-xin-xi-shou-ji-bu-ding-cha-zhao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="004 实验 -PR提权">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="004 实验 -PR提权/msf信息收集--补丁查找">
                         
-                        <span class="card-title">004 实验 -PR提权</span>
+                        <span class="card-title">004 实验 -PR提权/msf信息收集--补丁查找</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            004 实验 -PR提权
-Contents
-Contents
-实验
-过程
-
-实验
-过程
-首先通过菜刀连接上
-
-
-
-访问虚拟终端，查看一下权限发现拒绝访问，有可能是因为做了限制，是这里无法访问到cmd.exe所以我们手动上传一个cmd.exe
+                            msf信息收集–补丁查找
+Windows缺少的补丁
+– 基于已经获取到的session进行检测
+– use post/windows/gather/enum_patches 
+▪ show advanced
+▪ set VERBOSE ye
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-05
                             </span>
                         <span class="publish-author">
                             
